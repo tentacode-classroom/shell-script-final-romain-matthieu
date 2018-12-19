@@ -3,10 +3,9 @@ CURRENT_DIRECTORY=`dirname $0`
 FILES=`find $CURRENT_DIRECTORY -type f -name "log.*"`
 if [ -z "$FILES" ]
 then
-	touch 777 log.1
-	chmod 777 log.1
+	touch log.1
 	F=log.1
-	
+
 else
 compt=1
 for FILE in $FILES
