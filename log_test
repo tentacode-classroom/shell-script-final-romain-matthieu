@@ -1,0 +1,13 @@
+#!/bin/bash
+CURRENT_DIRECTORY=`dirname $0`
+
+for (( i = 0; i < 210; i++ ))
+do
+	if [ $i%100 == 0 ]
+then
+  	sleep 1
+	echo sleep
+fi
+	./log_rotate J\'aime  les licornes et leurs jolies cornes
+	echo $i
+done

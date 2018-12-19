@@ -1,0 +1,29 @@
+#!/bin/bash
+CURRENT_DIRECTORY=`dirname $0`
+FILES=`find $CURRENT_DIRECTORY -type f -name "log.*"`
+if [ -z "$FILES" ]
+then
+	touch 777 log.1
+	chmod 777 log.1
+	F=log.1
+	
+else
+compt=1
+for FILE in $FILES
+
+	do
+	C=`wc -l $FILE | awk '{print $1}'`
+	F=log.$compt
+		if [ $C == 1000 ]
+		then
+			((compt++))
+			touch log.$compt
+			F=log.$compt
+		fi
+	done
+fi
+
+ARGS=$*
+DATE=`date +'[%Y-%m-%d %H:%M:%S]'`
+
+echo $DATE $ARGS >> $CURRENT_DIRECTORY/$F
