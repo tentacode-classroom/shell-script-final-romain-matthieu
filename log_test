@@ -1,4 +1,5 @@
 #!/bin/bash
+rm log.*
 for (( i = 0; i < 3500; i++ ))
 do
 if [ $(($i%100)) == 0 ]
