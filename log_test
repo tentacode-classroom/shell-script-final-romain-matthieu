@@ -1,12 +1,10 @@
 #!/bin/bash
-
-for (( i = 0; i < 210; i++ ))
+for (( i = 0; i < 3500; i++ ))
 do
-if [ $i%100 == 0 ]
+if [ $(($i%100)) == 0 ]
 then
-  	sleep 10
-	echo sleep
+        sleep 1
 fi
-	./log_rotate J\'aime  les licornes et leurs jolies cornes
-	echo $i
+        ./log_rotate Log test $i
+        echo $i
 done
